@@ -44,6 +44,6 @@ class FunctionOptimization:
     def fitnessValue(self,individual:np.array)->np.double:
         return 0
     
-    def volidateConstraint(self,individual)->np.double:
+    def volidateConstraint(self,individual:np.array)->np.double:
         return 0
     
