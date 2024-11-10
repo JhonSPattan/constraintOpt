@@ -165,7 +165,46 @@ class AHLBSA(HLBSA):
                 population = np.copy(np.array(dummyPopulation))
 
                 self._calculationMuValue()
+            
+            bestIndividualList.append(bestPopulation)
+            bestFitness.append(minValue)
+            roundValueplot.append(minRound)
+            roundPopdiversity.append(popdiversity)
+            roundFitnessdiversity.append(fitdiversity)
+            roundSuccessRate.append(successrate)
+            
+        
+        roundPopdiversity = np.array(roundPopdiversity)
+        roundFitnessdiversity = np.array(roundFitnessdiversity)
+        roundSuccessRate = np.array(roundSuccessRate)
 
+        bestFitness = np.array(bestFitness)
+        bestIndividualList = np.array(bestIndividualList)
+        roundValueplot = np.array(roundValueplot)
+        bestIndividualAverage = self.individualAvg(bestIndividualList)
+        fitnessDf = {'solution':bestFitness}
+        individualDf = {}
+        for i in range(self.replace):
+            key = "individual"+str(i+1)
+            individualDf[key] = bestIndividualList[i]
+        
+        individualDf = pd.DataFrame(data=individualDf)
+        fitnessDf = pd.DataFrame(data=fitnessDf)
+        fa = FileAnalysis(functionname=self.functionname, algorithmname=self.algorithmname, data=fitnessDf, individual=individualDf, problemtype=self.problemtype, functiontype=self.functiontype,plotValue=roundValueplot)
+        fa.fileWriteSolution()
+        fa.plotAnalysis()
+        fa.analysis()
+
+        pa = PopulationAnalysis(functionname=self.functionname,algorithmname=self.algorithmname,diversityList=roundPopdiversity,successRateList=roundSuccessRate,
+                                fitdiversityList=roundFitnessdiversity,problemtype=self.problemtype,functiontype=self.functiontype,replace=self.replace)
+        
+        pa.fileWriteDiversity()
+        pa.fileWriteFitness()
+        pa.fileWriteSuccess()
+
+        # population = self.unconstraintObj.generate()
+        # self.summary(xVec=bestIndividualAverage)
+        return bestIndividualAverage
 
 
     
