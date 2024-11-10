@@ -1,0 +1,178 @@
+BSA_SAe_10di  with function:  CEC2017Constraint-C22  in  10
+From function CEC2017Constraint-C22 with algorithmname BSA_SAe_10di
+Worst solution  11868412.944189474  with volidate  550.9684118566871
+Best solution  320911.43961688224  with volidate  73.08268169134419
+Mean solution  3046899.5284410543  with volidate  366.53115825569296
+Standart diviation  2364613.296534959
+BSA_SAe_10di  with function:  CEC2017Constraint-C23  in  10
+From function CEC2017Constraint-C23 with algorithmname BSA_SAe_10di
+Worst solution  17.48177630501491  with volidate  1132.534558663017
+Best solution  10.637136089805422  with volidate  137.28274749397642
+Mean solution  14.61552882934134  with volidate  550.4513495238293
+Standart diviation  1.6461323354579478
+BSA_SAe_10di  with function:  CEC2017Constraint-C24  in  10
+Process Process-1:
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/patipan/Documents/ConstraintOptimization/Test10dimension/BSA_SAeTest10dimensionCEC2017Constraint/bsa_saeTest10diCEC2017Constraint.py", line 89, in cec2017ConstraintSet4
+    deObj.optimized()
+  File "/home/patipan/Documents/ConstraintOptimization/BSA/BSA_SAe.py", line 67, in optimized
+    fitnessValue[i],volidateValue[i] = self._eveluate(population[i])
+  File "/home/patipan/Documents/ConstraintOptimization/BSA/BSA.py", line 57, in _eveluate
+    return self.constraintClassObj.eveluate(x)
+  File "/home/patipan/Documents/ConstraintOptimization/Benchmark/ConstraintOptimizationCEC2017set4.py", line 38, in eveluate
+    return (self._objectValue(z),self._constraintVolidation(z))
+TypeError: C15._constraintVolidation() missing 1 required positional argument: 'x'
+All process in BSA_SAe with CEC2017 constraint 10 dimension is complete
+BSA_SAe_30di  with function:  CEC2017Constraint-C01  in  30
+BSA_SAe_30di  with function:  CEC2017Constraint-C08  in  30
+From function CEC2017Constraint-C08 with algorithmname BSA_SAe_30di
+Worst solution  12.878670222683784  with volidate  0.000891137841460199
+Best solution  7.667998891367825  with volidate  0.00033996408308609746
+Mean solution  9.110461578695073  with volidate  0.0005213484793435802
+Standart diviation  1.1867481633110388
+BSA_SAe_30di  with function:  CEC2017Constraint-C09  in  30
+From function CEC2017Constraint-C01 with algorithmname BSA_SAe_30di
+Worst solution  8037.733139848408  with volidate  0
+Best solution  3778.798997786285  with volidate  0
+Mean solution  5387.258847906009  with volidate  0.0
+Standart diviation  974.1739455397119
+BSA_SAe_30di  with function:  CEC2017Constraint-C02  in  30
+From function CEC2017Constraint-C09 with algorithmname BSA_SAe_30di
+Worst solution  17.08569724162479  with volidate  5.460321756816893
+Best solution  3.2786341056726385  with volidate  4.001358587897894
+Mean solution  7.64517148946969  with volidate  4.455328512086156
+Standart diviation  3.2887453869110064
+BSA_SAe_30di  with function:  CEC2017Constraint-C10  in  30
+From function CEC2017Constraint-C02 with algorithmname BSA_SAe_30di
+Worst solution  11935.912289684888  with volidate  0
+Best solution  4391.774287465681  with volidate  0
+Mean solution  5622.90046521026  with volidate  0.0
+Standart diviation  1488.9601643597327
+BSA_SAe_30di  with function:  CEC2017Constraint-C03  in  30
+From function CEC2017Constraint-C10 with algorithmname BSA_SAe_30di
+Worst solution  40.929133646536215  with volidate  25171.815567220096
+Best solution  26.414325198637584  with volidate  20518.827714638945
+Mean solution  33.71105000794986  with volidate  21569.43468359584
+Standart diviation  3.9637422342482793
+BSA_SAe_30di  with function:  CEC2017Constraint-C11  in  30
+From function CEC2017Constraint-C11 with algorithmname BSA_SAe_30di
+Worst solution  -256.34269884967415  with volidate  222.76040582510487
+Best solution  -1107.196549408858  with volidate  673.7364459940823
+Mean solution  -689.8696066213491  with volidate  452.26725001815566
+Standart diviation  230.59152113257238
+BSA_SAe_30di  with function:  CEC2017Constraint-C12  in  30
+From function CEC2017Constraint-C03 with algorithmname BSA_SAe_30di
+Worst solution  4599345.403677402  with volidate  0.0005754902431893583
+Best solution  103665.84812903899  with volidate  0.0
+Mean solution  1174416.686131449  with volidate  0.00019014192679766857
+Standart diviation  1093507.1786272423
+BSA_SAe_30di  with function:  CEC2017Constraint-C04  in  30
+From function CEC2017Constraint-C12 with algorithmname BSA_SAe_30di
+Worst solution  1426.244512759446  with volidate  1144.8800395375335
+Best solution  890.872665095012  with volidate  648.6892669866475
+Mean solution  1145.1323721095805  with volidate  841.3565939894595
+Standart diviation  191.81701070840998
+BSA_SAe_30di  with function:  CEC2017Constraint-C13  in  30
+From function CEC2017Constraint-C04 with algorithmname BSA_SAe_30di
+Worst solution  259.9476766389443  with volidate  0
+Best solution  178.4587393409967  with volidate  0
+Mean solution  207.19505318635458  with volidate  0.0
+Standart diviation  19.626989042372088
+BSA_SAe_30di  with function:  CEC2017Constraint-C05  in  30
+From function CEC2017Constraint-C13 with algorithmname BSA_SAe_30di
+Worst solution  22373940.912624866  with volidate  1397.4215142478051
+Best solution  1253959.8361226274  with volidate  530.39328688712
+Mean solution  9323064.996290077  with volidate  1018.1060694252104
+Standart diviation  4339404.184238904
+BSA_SAe_30di  with function:  CEC2017Constraint-C14  in  30
+From function CEC2017Constraint-C05 with algorithmname BSA_SAe_30di
+Worst solution  114689.84336742513  with volidate  0
+Best solution  4953.023292665148  with volidate  0
+Mean solution  44166.709292996275  with volidate  0.0
+Standart diviation  34899.52899532784
+BSA_SAe_30di  with function:  CEC2017Constraint-C06  in  30
+From function CEC2017Constraint-C14 with algorithmname BSA_SAe_30di
+Worst solution  15.86351257271971  with volidate  2150.2851731174833
+Best solution  13.454176825511286  with volidate  1133.0953817065702
+Mean solution  14.767970013905103  with volidate  1625.3840474285587
+Standart diviation  0.7609815834996859
+From function CEC2017Constraint-C06 with algorithmname BSA_SAe_30di
+Worst solution  2893.767099819109  with volidate  0.4763680405654887
+Best solution  1109.5582380163166  with volidate  0.5695501749314459
+Mean solution  1645.2852079836143  with volidate  0.6699102596791753
+Standart diviation  338.3510064390494
+BSA_SAe_30di  with function:  CEC2017Constraint-C07  in  30
+From function CEC2017Constraint-C07 with algorithmname BSA_SAe_30di
+Worst solution  184.960784984268  with volidate  0.004024944458513847
+Best solution  -377.3813672929163  with volidate  0.0012968162288369057
+Mean solution  -94.28000824155646  with volidate  0.003390462443860966
+Standart diviation  115.02451474721138
+BSA_SAe_30di  with function:  CEC2017Constraint-C15  in  30
+BSA_SAe_30di  with function:  CEC2017Constraint-C22  in  30
+From function CEC2017Constraint-C15 with algorithmname BSA_SAe_30di
+Worst solution  33.1363375226798  with volidate  0.0018334375903323763
+Best solution  16.2163543684158  with volidate  0.0028635140935549977
+Mean solution  20.322438660954653  with volidate  0.0024687483442414476
+Standart diviation  3.685045525361131
+BSA_SAe_30di  with function:  CEC2017Constraint-C16  in  30
+From function CEC2017Constraint-C22 with algorithmname BSA_SAe_30di
+Worst solution  180502376.0661813  with volidate  3952.2055230930364
+Best solution  41285675.984801695  with volidate  2077.9718802224324
+Mean solution  91893815.0959679  with volidate  3174.8770877982793
+Standart diviation  43661604.98968539
+BSA_SAe_30di  with function:  CEC2017Constraint-C23  in  30
+From function CEC2017Constraint-C16 with algorithmname BSA_SAe_30di
+Worst solution  227.87512795246948  with volidate  1.2308895118484737e-05
+Best solution  115.91403907883456  with volidate  0.00025712674572430104
+Mean solution  181.658230701525  with volidate  0.0001175174652321261
+Standart diviation  29.056803944135794
+BSA_SAe_30di  with function:  CEC2017Constraint-C17  in  30
+From function CEC2017Constraint-C23 with algorithmname BSA_SAe_30di
+Worst solution  20.08971061410398  with volidate  8482.565517411596
+Best solution  17.634750799004063  with volidate  3892.8174655763014
+Mean solution  18.97339228996246  with volidate  5887.240590496356
+Standart diviation  0.636846661837138
+BSA_SAe_30di  with function:  CEC2017Constraint-C24  in  30
+Process Process-5:
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/patipan/Documents/ConstraintOptimization/Test30dimension/BSA_SAeTest30dimensionCEC2017Constraint/bsa_saeTest30diCEC2017Constraint.py", line 89, in cec2017ConstraintSet4
+    deObj.optimized()
+  File "/home/patipan/Documents/ConstraintOptimization/BSA/BSA_SAe.py", line 67, in optimized
+    fitnessValue[i],volidateValue[i] = self._eveluate(population[i])
+  File "/home/patipan/Documents/ConstraintOptimization/BSA/BSA.py", line 57, in _eveluate
+    return self.constraintClassObj.eveluate(x)
+  File "/home/patipan/Documents/ConstraintOptimization/Benchmark/ConstraintOptimizationCEC2017set4.py", line 38, in eveluate
+    return (self._objectValue(z),self._constraintVolidation(z,x))
+TypeError: C15._constraintVolidation() missing 1 required positional argument: 'x'
+From function CEC2017Constraint-C17 with algorithmname BSA_SAe_30di
+Worst solution  1.2748290721186248  with volidate  1010.3145903811551
+Best solution  1.1209675972403643  with volidate  394.87029603942375
+Mean solution  1.1987457109710273  with volidate  705.9823725046165
+Standart diviation  0.04079039531879477
+BSA_SAe_30di  with function:  CEC2017Constraint-C18  in  30
+From function CEC2017Constraint-C18 with algorithmname BSA_SAe_30di
+Worst solution  16106.609435215294  with volidate  12490375.132936051
+Best solution  1564.7355570083982  with volidate  15648274.353449512
+Mean solution  5156.508128445216  with volidate  14338169.603046559
+Standart diviation  4158.843633239307
+BSA_SAe_30di  with function:  CEC2017Constraint-C19  in  30
+From function CEC2017Constraint-C19 with algorithmname BSA_SAe_30di
+Worst solution  39.596886101013254  with volidate  42844.11312466801
+Best solution  14.401765942607623  with volidate  42812.898778240764
+Mean solution  31.442634301897087  with volidate  42835.31247557263
+Standart diviation  6.315137142994436
+BSA_SAe_30di  with function:  CEC2017Constraint-C20  in  30
+From function CEC2017Constraint-C20 with algorithmname BSA_SAe_30di
+Worst solution  6.865168007394893  with volidate  0
+Best solution  3.2876421058165786  with volidate  0
+Mean solution  5.085376786849526  with volidate  0.0
+Standart diviation  0.8303009200094583
+BSA_SAe_30di  with function:  CEC2017Constraint-C21  in  30

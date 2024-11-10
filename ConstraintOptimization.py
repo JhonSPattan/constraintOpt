@@ -1,0 +1,7 @@
+from Test10dimension.BSA_SAeTest10dimensionCEC2017Constraint.bsa_saeTest10diCEC2017Constraint import bsa_saeTest10diCEC2017Constraint
+from Test30dimension.BSA_SAeTest30dimensionCEC2017Constraint.bsa_saeTest30diCEC2017Constraint import bsa_saeTest30diCEC2017Constraint
+
+
+if __name__ == '__main__':
+    bsa_saeTest10diCEC2017Constraint()
+    bsa_saeTest30diCEC2017Constraint()

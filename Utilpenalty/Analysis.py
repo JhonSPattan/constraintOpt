@@ -5,25 +5,26 @@ from matplotlib import pyplot
 
 
 # for Ubuntu Server 
-# path_result = "/myweb/www/pythonrunnew/Unconstraintoptimization/result/"
-# path_individual = "/myweb/www/pythonrunnew/Unconstraintoptimization/individual/"
-# path_plot = "/myweb/www/pythonrunnew/Unconstraintoptimization/plot/"
-# path_populationanalysis = "/myweb/www/pythonrunnew/Unconstraintoptimization/populationAnalysis/"
+# path_result = "/myweb/www/pythonrunnew/NewDE/unconstraintoptimization/result/"
+# path_individual = "/myweb/www/pythonrunnew/NewDE/unconstraintoptimization/individual/"
+# path_plot = "/myweb/www/pythonrunnew/NewDE/unconstraintoptimization/plot/"
+# path_populationanalysis = "/myweb/www/pythonrunnew/NewDE/unconstraintoptimization/populationAnalysis/"
 
 
-
-# for work station PC
-#path_result = "/home/patipan/Documents/unconstraintoptimization/result/"
-#path_individual = "/home/patipan/Documents/unconstraintoptimization/individual/"
-#path_plot = "/home/patipan/Documents/unconstraintoptimization/plot/"
-#path_populationanalysis = "/home/patipan/Documents/unconstraintoptimization/populationAnalysis/"
-
-
-# for local pc
+# for local PC
 path_result = "/home/patipan/Documents/ConstraintOptimization/result/"
 path_individual = "/home/patipan/Documents/ConstraintOptimization/individual/"
 path_plot = "/home/patipan/Documents/ConstraintOptimization/plot/"
 path_populationanalysis = "/home/patipan/Documents/ConstraintOptimization/populationAnalysis/"
+
+
+
+
+# for work station PC
+# path_result = "/home/patipan/Documents/unconstraintoptimization/result/"
+# path_individual = "/home/patipan/Documents/unconstraintoptimization/individual/"
+# path_plot = "/home/patipan/Documents/unconstraintoptimization/plot/"
+# path_populationanalysis = "/home/patipan/Documents/unconstraintoptimization/populationAnalysis/"
 
 
 
@@ -40,6 +41,7 @@ class PopulationAnalysis:
         self.replace = replace
         # self.round = round
         
+    
     
     def averageValue(self,dataValue:np.array)->np.array:
         averageData = []
@@ -71,17 +73,37 @@ class PopulationAnalysis:
         path_file = path_populationanalysis+self.problemtype+"/"+self.functiontype+"/"+self.functionname+"_"+self.algorithmname+"_diversity.csv"
         plotdiversity.to_csv(path_file,index=False)
         
-        
+
+class DimensionAnalysis:
+    def __init__(self,functionname:str,algorithmname:str,dimchange:np.array,problemtype:str="Small",functiontype:str="Unimodal",replace:int=30) -> None:
+        self.functionname = functionname
+        self.algorithmname = algorithmname
+        self.dimchange = dimchange
+        self.problemtype = problemtype
+        self.functiontype = functiontype
+        self.replace = replace
+
+    def averageValue(self,dataValue:np.array)->np.array:
+        averageData = []
+        replace = len(dataValue)
+        for i in range(len(dataValue[0])):
+            averageValue = 0
+            for j in range(len(dataValue)):
+                averageValue += dataValue[j][i]
+            averageData.append(averageValue/replace)
+        return np.array(averageData)
     
 
-
-
-
+    def fileWriteDimChange(self):
+        fitnessRate = {'dimensionchange':self.averageValue(self.dimchange)}
+        plotSuccess = pd.DataFrame(fitnessRate)
+        path_file = path_populationanalysis+self.problemtype+"/"+self.functiontype+"/"+self.functionname+"_"+self.algorithmname+"_dimensionchange.csv"
+        plotSuccess.to_csv(path_file,index=False)
 
 
 class FileAnalysis:
     def __init__(self,functionname:str,algorithmname:str,data:pd.DataFrame,individual:pd.DataFrame,
-                 plotValue:np.array=None,plotVolidate:np.array=None,problemtype:str="Small",functiontype:str="Unimodal")->None:
+                 plotValue:np.array=None,problemtype:str="Small",functiontype:str="Unimodal")->None:
         self.functionname = functionname
         self.algorithmname = algorithmname
         self.data = data
@@ -89,7 +111,6 @@ class FileAnalysis:
         self.problemtype = problemtype
         self.functiontype = functiontype
         self.plotValue = plotValue
-        self.plotVolidate = plotVolidate
     
     
     def plotAnalysis(self)->None:
@@ -105,59 +126,30 @@ class FileAnalysis:
         plotDf = pd.DataFrame({'solutionround':plotAverage})
         path_file = path_plot+self.problemtype+"/"+self.functiontype+"/"+self.functionname+"_"+self.algorithmname+"_plot.csv"
         plotDf.to_csv(path_file,index=False)
-
-    def plotAnalysis2(self)->None:
-        plotAverage = []
-        plotVoliAverage = []
-
-        replace = len(self.plotValue)
-        for i in range(len(self.plotValue[0])):
-            averageValue = 0
-            for j in range(len(self.plotValue)):
-                averageValue += self.plotValue[j][i]
-            plotAverage.append(averageValue/replace)
-
-        replace = len(self.plotVolidate)
-        for i in range(len(self.plotVolidate[0])):
-            averageValue = 0
-            for j in range(len(self.plotVolidate)):
-                averageValue += self.plotVolidate[j][i]
-            plotVoliAverage.append(averageValue/replace)
-
-        plotAverage = np.array(plotAverage)
-        plotVoliAverage = np.array(plotVoliAverage)
-
-        plotDf = pd.DataFrame({'solutionround':plotAverage,'volidateround':plotVoliAverage})
-        path_file = path_plot+self.problemtype+"/"+self.functiontype+"/"+self.functionname+"_"+self.algorithmname+"_plot.csv"
-        plotDf.to_csv(path_file,index=False)
+        
         
             
     def fileWriteSolution(self)->None:
+        # C:/Users/patip/OneDrive/Documents/python/unconstraintoptimization/result/ReusableInventoryModel-F1/Multimodal/ReusableInventoryModel-F1_Multimodal_solution.csv
+        #print(self.functiontype," ",self.functionname," ",self.algorithmname)
         path_file = path_result+self.problemtype+"/"+self.functiontype+"/"+self.functionname+"_"+self.algorithmname+"_solution.csv"
+        #print(path_file)
         self.data.to_csv(path_file,index=False)
 
     def fileWriteIndividual(self)->None:
         path_file = path_individual+self.functionname+"_"+self.algorithmname+"_individual.csv"
-        self.individual.to_csv(path_file,index=False)
+        self.data.to_csv(path_file,index=False)
         
 
     def analysis(self)->None:
         solution = self.data['solution']
-        volidate = self.data['volidate']
-
-        minIndex = np.where(solution == min(solution))[0][0]
-        maxIndex = np.where(solution == max(solution))[0][0]
-
-        volidatemin = volidate[minIndex]
-        volidatemax = volidate[maxIndex]
-
         print("From function "+self.functionname+" with algorithmname "+self.algorithmname)
-        print("Worst solution ",(max(solution))," with volidate ",volidatemax,flush=True)
-        print("Best solution ",(min(solution))," with volidate ",volidatemin,flush=True)
-        print("Mean solution ",(np.average(solution))," with volidate ",(np.average(volidate)),flush=True)
+        print("Worst solution ",(max(solution)),flush=True)
+        print("Best solution ",(min(solution)),flush=True)
+        print("Mean solution ",(np.average(solution)),flush=True)
         print("Standart diviation ",np.std(solution),flush=True)
         
-        
+
 class FileAnalysis2(FileAnalysis):
     def __init__(self,functionname:str,algorithmname:str,data:pd.DataFrame,individual:pd.DataFrame,
                  plotValue:np.array=None,plotValuemin:np.array=None,plotValuemax:np.array=None
@@ -233,5 +225,3 @@ class FileAnalysis2(FileAnalysis):
         })
         path_file = path_plot+self.problemtype+"/"+self.functionname+"_"+self.algorithmname+"_plot.csv"
         plotDf.to_csv(path_file,index=False)
-
-
