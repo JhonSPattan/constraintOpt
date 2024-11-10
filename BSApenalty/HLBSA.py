@@ -177,5 +177,5 @@ class HLBSA(BSA):
         pa.fileWriteSuccess()
 
         # population = self.unconstraintObj.generate()
-        self.summary(xVec=bestIndividualAverage)
+        # self.summary(xVec=bestIndividualAverage)
         return bestIndividualAverage
