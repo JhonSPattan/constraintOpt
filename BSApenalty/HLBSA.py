@@ -167,6 +167,7 @@ class HLBSA(BSA):
         fa = FileAnalysis(functionname=self.functionname, algorithmname=self.algorithmname, data=fitnessDf, individual=individualDf, problemtype=self.problemtype, functiontype=self.functiontype,plotValue=roundValueplot)
         fa.fileWriteSolution()
         fa.plotAnalysis()
+        fa.fileWriteIndividual()
         fa.analysis()
 
         pa = PopulationAnalysis(functionname=self.functionname,algorithmname=self.algorithmname,diversityList=roundPopdiversity,successRateList=roundSuccessRate,
