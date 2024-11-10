@@ -1,7 +1,7 @@
-from Test10dimension.BSA_SAeTest10dimensionCEC2017Constraint.bsa_saeTest10diCEC2017Constraint import bsa_saeTest10diCEC2017Constraint
-from Test30dimension.BSA_SAeTest30dimensionCEC2017Constraint.bsa_saeTest30diCEC2017Constraint import bsa_saeTest30diCEC2017Constraint
+from Test10dimension.HLBSATest10dimensionCEC2017ConstraintPenalty.hlbsaTest10dimensionCEC2017ConstraintPenalty import hlbsaTest10diCEC2017ConstraintPenalty
+from Test30dimension.HLBSATest30dimensionCEC2017ConstraintPenalty.hlbsaTest30dimensionCEC2017ConstraintPenalty import hlbsaTest30diCEC2017ConstraintPenalty
 
 
 if __name__ == '__main__':
-    bsa_saeTest10diCEC2017Constraint()
-    bsa_saeTest30diCEC2017Constraint()
+    hlbsaTest10diCEC2017ConstraintPenalty()
+    hlbsaTest30diCEC2017ConstraintPenalty()
